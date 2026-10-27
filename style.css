@@ -1,0 +1,57 @@
+:root {
+  --bg: #fdfcfa;
+  --text: #222;
+  --muted: #5f5f5f;
+  --accent: #1f4e8c;
+  --rule: #e4e1da;
+  --placeholder: #ece8df;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161616;
+    --text: #e6e6e6;
+    --muted: #a0a0a0;
+    --accent: #8fb6ff;
+    --rule: #2e2e2e;
+    --placeholder: #262626;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 18px/1.65 "Source Serif 4", Georgia, serif;
+}
+main { max-width: 680px; margin: 0 auto; padding: 64px 20px; }
+
+header { text-align: center; margin-bottom: 40px; }
+h1 { font-size: 2.1rem; font-weight: 600; margin: 0; }
+.role { color: var(--muted); margin: 4px 0 0; }
+nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 24px; margin-top: 20px; }
+nav a { color: var(--muted); padding: 6px 0; border-bottom: 1px solid transparent; }
+nav a:hover { color: var(--text); text-decoration: none; }
+nav a[aria-current="page"] { color: var(--text); border-bottom-color: var(--text); }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.photo {
+  width: 180px; height: 180px; margin: 0 auto 28px;
+  border-radius: 50%; overflow: hidden; background: var(--placeholder);
+}
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+h2 {
+  font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em;
+  border-bottom: 1px solid var(--rule); padding-bottom: 8px; margin: 0 0 20px;
+}
+h2.spaced { margin-top: 40px; }
+section p { margin: 0 0 14px; }
+.label { font-weight: 600; margin-bottom: 2px !important; }
+.contact { color: var(--muted); }
+.item { margin-bottom: 20px; line-height: 1.5; }
+.item .title { font-weight: 600; }
+.item .meta { color: var(--muted); }
+
+footer { margin-top: 64px; color: var(--muted); font-size: .85rem; text-align: center; }
