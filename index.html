@@ -12,48 +12,82 @@
 <body>
   <main>
     <header>
-      <!-- Add a photo: put photo.jpg in the repo and uncomment -->
-      <!-- <img class="photo" src="photo.jpg" alt="Jared W. Jones"> -->
       <h1>Jared W. Jones</h1>
-      <p class="role">[Position] · [Department], [University]</p>
-      <nav>
-        <a href="mailto:you@example.edu">Email</a>
-        <a href="cv.pdf">CV</a>
-        <a href="https://scholar.google.com/">Google Scholar</a>
-        <a href="https://github.com/jaredwjones">GitHub</a>
+      <p class="role">[Position] · [University]</p>
+      <nav aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#work">Current work</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#cv">CV</a>
       </nav>
     </header>
 
-    <section>
-      <h2>About</h2>
-      <p>I am a [position] at [University], working on [research area]. My research focuses on [topic one], [topic two], and [topic three].</p>
-      <p>[A sentence or two on background, e.g. previous degrees or current projects.]</p>
+    <section id="about" class="tab">
+      <!-- Shows photo.jpg from the repo; falls back to a placeholder until it exists -->
+      <div class="photo">
+        <img src="photo.jpg" alt="Jared W. Jones" onerror="this.remove()">
+      </div>
+      <p>I am a [position] in the [Department] at [University]. My research is on [research area], with a focus on [topic one] and [topic two].</p>
+      <p>Before this, I [previous degree or role] at [Institution]. [One sentence on what drives the work.]</p>
+      <p class="contact">
+        <a href="mailto:you@example.edu">you@example.edu</a> ·
+        <a href="https://scholar.google.com/">Google Scholar</a> ·
+        <a href="https://github.com/jaredwjones">GitHub</a>
+      </p>
     </section>
 
-    <section>
+    <section id="work" class="tab">
+      <h2>Current work</h2>
+      <div class="item">
+        <div class="title">[Project title]</div>
+        <div class="meta">[Two lines on the question, approach, and where it stands.]</div>
+      </div>
+      <div class="item">
+        <div class="title">[Second project title]</div>
+        <div class="meta">[Short description. With Coauthor Name.]</div>
+      </div>
+    </section>
+
+    <section id="publications" class="tab">
       <h2>Publications</h2>
-      <ul class="pubs">
-        <li>
-          <span class="title">Title of a paper</span>
-          <span class="meta"><strong>Jared W. Jones</strong>, Coauthor Name. <em>Journal or Conference</em>, 2026.</span>
-          <span class="links"><a href="#">PDF</a></span>
-        </li>
-        <li>
-          <span class="title">Title of another paper</span>
-          <span class="meta"><strong>Jared W. Jones</strong>. <em>Journal Name</em>, 2025.</span>
-          <span class="links"><a href="#">PDF</a></span>
-        </li>
-      </ul>
+      <div class="item">
+        <div class="title">[Title of a paper]</div>
+        <div class="meta"><strong>Jared W. Jones</strong>, [Coauthor]. <em>[Journal]</em>, 2026. <a href="#">PDF</a></div>
+      </div>
+      <div class="item">
+        <div class="title">[Title of another paper]</div>
+        <div class="meta"><strong>Jared W. Jones</strong>. <em>[Journal]</em>, 2025. <a href="#">PDF</a></div>
+      </div>
     </section>
 
-    <section>
+    <section id="teaching" class="tab">
       <h2>Teaching</h2>
-      <ul>
-        <li>[Course name], [University], [Term Year]</li>
-      </ul>
+      <p><strong>[Course name]</strong> — [University], [Term Year]</p>
+      <p><strong>[Course name]</strong> — [University], [Term Year]</p>
+    </section>
+
+    <section id="cv" class="tab">
+      <h2>CV</h2>
+      <p>My full CV is available as a PDF. <a href="cv.pdf">Download CV</a></p>
     </section>
 
     <footer>© 2026 Jared W. Jones</footer>
   </main>
+
+  <script>
+    // Show one section at a time based on the URL hash (#about, #work, ...)
+    function showTab() {
+      var id = location.hash.slice(1) || 'about';
+      if (!document.getElementById(id)) id = 'about';
+      document.querySelectorAll('.tab').forEach(function (s) { s.hidden = s.id !== id; });
+      document.querySelectorAll('nav a').forEach(function (a) {
+        if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'page');
+        else a.removeAttribute('aria-current');
+      });
+    }
+    window.addEventListener('hashchange', function () { showTab(); window.scrollTo(0, 0); });
+    showTab();
+  </script>
 </body>
 </html>
