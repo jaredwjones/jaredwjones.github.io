@@ -46,7 +46,9 @@ h2 {
   font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em;
   border-bottom: 1px solid var(--rule); padding-bottom: 8px; margin: 0 0 20px;
 }
+h2.spaced { margin-top: 40px; }
 section p { margin: 0 0 14px; }
+.label { font-weight: 600; margin-bottom: 2px !important; }
 .contact { color: var(--muted); }
 .item { margin-bottom: 20px; line-height: 1.5; }
 .item .title { font-weight: 600; }
