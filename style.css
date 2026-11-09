@@ -6,16 +6,7 @@
   --rule: #e4e1da;
   --placeholder: #ece8df;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #161616;
-    --text: #e6e6e6;
-    --muted: #a0a0a0;
-    --accent: #8fb6ff;
-    --rule: #2e2e2e;
-    --placeholder: #262626;
-  }
-}
+
 * { box-sizing: border-box; }
 body {
   margin: 0;
