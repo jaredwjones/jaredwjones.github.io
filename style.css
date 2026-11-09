@@ -53,5 +53,6 @@ section p { margin: 0 0 14px; }
 .item { margin-bottom: 20px; line-height: 1.5; }
 .item .title { font-weight: 600; }
 .item .meta { color: var(--muted); }
+.subtitle { font-size: 1.2rem; font-weight: normal; color: #555; margin-top: 0; }
 
 footer { margin-top: 64px; color: var(--muted); font-size: .85rem; text-align: center; }
