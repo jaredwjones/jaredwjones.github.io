@@ -57,3 +57,19 @@ section p { margin: 0 0 14px; }
 .subtitle { font-size: 1.2rem; font-weight: normal; color: #555; margin-top: 0; text-align: center; }
 
 footer { margin-top: 64px; color: var(--muted); font-size: .85rem; text-align: center; }
+
+ul {
+  margin: 1em 0;
+  padding-left: 1.5em;
+  list-style-type: disc;
+}
+
+ul li {
+  margin-bottom: 0.5em;
+  line-height: 1.6;
+}
+
+ul ul {
+  list-style-type: circle;
+  margin: 0.5em 0 0;
+}
